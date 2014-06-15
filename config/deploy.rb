@@ -18,7 +18,7 @@ set :user, 'deploy'
 set :repository, ENV.fetch('DEPLOY_GIT_REPO') 
 set :deploy_to, ENV.fetch('DEPLOY_DIRECTORY') 
 #set :rvm_path, '/usr/local/rvm/bin/rvm'
-set :shared_paths, ['log', 'tmp', 'config/database.yml']
+set :shared_paths, ['log', 'tmp', 'config/database.yml', '.production.env', '.env']
 set :unicorn_pid, "#{deploy_to}/current/tmp/pids/unicorn.pid"
 
 task :environment do
