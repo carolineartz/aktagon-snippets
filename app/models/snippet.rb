@@ -11,7 +11,7 @@ class Snippet < ActiveRecord::Base
   validates :body, length: { minimum: 1, maximum: 100.kilobytes }
   validates :language_id, presence: true
 
-  scope :recent, -> { order('created_at desc') }
+  scope :recent, -> { order('created_at desc').includes(:tags, :user, :language) }
 
   before_save do
     if changes.include?(:body)
