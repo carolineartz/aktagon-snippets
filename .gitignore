@@ -3,6 +3,8 @@
 .development.env
 .deployment.env
 
+public/assets
+
 config/database.yml
 
 *.gem
