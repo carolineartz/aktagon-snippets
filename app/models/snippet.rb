@@ -61,14 +61,13 @@ class Snippet < ActiveRecord::Base
     uri
   end
 
-  #def body
-    #attributes['body'].andand.force_encoding('utf-8')
-  #end
+  def body
+    self['body'].andand.force_encoding('utf-8')
+  end
 
-  #def rendered_body
-    #attributes['rendered_body'].andand.force_encoding('utf-8')
-  #end
-  #alias_method :highlighted, :rendered_body
+  def rendered_body
+    self['rendered_body'].andand.force_encoding('utf-8')
+  end
 
   def line_count
     @line_count ||= body.lines.count+3 if body.present?

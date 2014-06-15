@@ -4,7 +4,6 @@ class SnippetsController < App
   #
   get '/:id-:name?' do |id, name|
     @snippet = Snippet.find(id)
-    # NOTE redirect to canonical URL if needed
     redirect @snippet.uri, 301 unless @request.path == @snippet.uri
     view :'snippets/show'
   end

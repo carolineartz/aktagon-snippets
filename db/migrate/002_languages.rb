@@ -11,6 +11,7 @@ class Languages < ActiveRecord::Migration
     {
       :'text.html.basic' => 'html',
       :'text.plain' => 'text',
+      :'source.php.cake' => 'php',
       :'source.shell' => 'shell script',
       :'source.js' => 'javascript',
       :'source.objc' => 'objective-c',
@@ -18,5 +19,9 @@ class Languages < ActiveRecord::Migration
     }.each do |external_name, name|
       Language.find_by!(external_name: external_name).update! name: name
     end
+  end
+
+  def down
+    Language.delete_all
   end
 end

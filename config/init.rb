@@ -15,9 +15,6 @@ require 'will_paginate/view_helpers/sinatra'
 
 require './lib/env'
 
-#Encoding.default_external = Encoding::UTF_8
-#Encoding.default_internal = Encoding::UTF_8
-
 %w(app/helpers app/concerns).each do |name|
   Dir[File.join(name, '**/*.rb')].each do |file|
     require_relative "../#{file}"

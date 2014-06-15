@@ -5,4 +5,8 @@ class Language < ActiveRecord::Base
   def to_param
     "#{id}-#{name.parameterize}"
   end
+
+  def uri
+    '/languages/' + to_param
+  end
 end

@@ -21,4 +21,8 @@ class Tag < ActiveRecord::Base
   def to_param
     "#{id}-#{name.parameterize}"
   end
+
+  def uri
+    '/tags/' + to_param
+  end
 end
