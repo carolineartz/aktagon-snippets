@@ -3,7 +3,7 @@ aktagon-snippets
 
 Host your own snippets.
 
-Source code for "snippets.aktagon.com":http://snippets.aktagon.com.
+Source code for [snippets.aktagon.com](http://snippets.aktagon.com).
 
 Requirements
 ================
