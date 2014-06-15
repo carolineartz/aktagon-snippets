@@ -10,7 +10,7 @@ class Flash
       value = $.cookie(name)
       if value
         # Set flash holder contents to cookie value
-        $(@flash_holder).attr('class', name).html(value).show('fast')
+        $(@flash_holder).attr('class', name).html(value).show()
         $.removeCookie(name, path: '/')
 
 $ ->
