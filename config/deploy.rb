@@ -20,6 +20,7 @@ set :deploy_to, ENV.fetch('DEPLOY_DIRECTORY')
 #set :rvm_path, '/usr/local/rvm/bin/rvm'
 set :shared_paths, ['log', 'tmp', 'config/database.yml', '.production.env', '.env']
 set :unicorn_pid, "#{deploy_to}/current/tmp/pids/unicorn.pid"
+set :full_path, "#{deploy_to!}/#{current_path}"
 
 task :environment do
   invoke :'rbenv:load'
@@ -42,7 +43,7 @@ task :deploy => :environment do
 end
 
 def rake(cmd)
-  queue! "cd #{deploy_to!}/#{current_path} && RACK_ENV=production bundle exec rake #{cmd}"
+  queue! "cd #{full_path!} && RACK_ENV=production bundle exec rake #{cmd}"
 end
 
 namespace :assets do
@@ -59,13 +60,13 @@ end
 
 namespace :unicorn do
   task :stop => :environment do
-    queue! "script/unicorn stop"
+    queue! "cd #{full_path!} && script/unicorn stop"
   end
   task :start => :environment do
-    queue! "script/unicorn start"
+    queue! "cd #{full_path!} && script/unicorn start"
   end
   task :restart => :environment do
-    queue! "script/unicorn upgrade"
+    queue! "cd #{full_path!} && script/unicorn upgrade"
   end
 end
 

@@ -8,7 +8,7 @@ class Tag < ActiveRecord::Base
   has_many :snippets, through: :taggings, source: :taggable, source_type: Snippet
   has_many :users, through: :taggings, source: :taggable, source_type: User
 
-  validates :name, uniqueness: { scope: [ :taggable_type, :taggable_id ] }
+  validates :name, uniqueness: true
 
   # Delete orphans
   def self.delete_orphans
