@@ -71,6 +71,8 @@ Create /var/www/snippets/shared/config/database.yml:
       password: xyz
       encoding: utf8
 
+Add all users to db/migrate/003_users.rb.
+
 Deploy
 
     $ mina deploy
