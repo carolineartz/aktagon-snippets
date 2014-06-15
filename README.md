@@ -28,7 +28,7 @@ Create config/database.yml:
 
     development:
       adapter:  mysql2
-      database: snippets_production
+      database: snippets_development
       username: xyz
       password: xyz
       encoding: utf8
