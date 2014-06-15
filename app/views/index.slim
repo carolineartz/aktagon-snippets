@@ -1,0 +1,16 @@
+- meta :body_classes, 'home'
+
+- if params[:page]
+  - meta :meta_title, 'Snippets - page ' + params[:page].to_s
+- else
+  - meta :meta_title, 'Snippets'
+
+- if @snippets.any?
+  == partial 'snippets/_list'
+- else
+  #snippets-list.columns.sixteen
+    p 
+      a href="/snippets/new" 
+        span.icon-pencil
+        ' Click here
+      ' to create a new snippet.

@@ -1,0 +1,9 @@
+- meta :meta_title, "#{@snippet.title} - #{@snippet.language.name} - #{@snippet.tags.map {|t| t.name}.join(', ')}"
+- meta :title, @snippet.title
+
+.columns.sixteen
+  == partial 'snippets/_snippet', locals: { snippet: @snippet }
+
+.columns.eight
+  #disqus_thread
+  == partial 'layouts/_disqus', locals: { disqus_id: @snippet.disqus_id }

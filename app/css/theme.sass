@@ -1,0 +1,236 @@
+$code-font: 'Inconsolata', sans-serif
+$header-font: 'Open Sans', sans-serif
+$body-font: "Open Sans", sans-serif
+
+$link-color: blue
+$body-color: #222
+
+$menu-color: #222
+$menu-hover-color: #222
+$menu-visited-color: #222
+
+body
+  //font-family: 'Source Sans Pro', sans-serif
+  font-family: $body-font
+  font-size: 100%
+  font-weight: 300
+  color: $body-color
+  text-rendering: optimizeLegibility
+
+body.text
+  margin-left: 20px
+
+h1, h2, h3, h4, h5
+  font-family: $header-font
+
+h1
+  font-weight: 300
+  letter-spacing: -1px
+
+h2
+  font-weight: 300
+  letter-spacing: -1px
+
+
+h1, h2, h3, h4, h5
+  a, a:visited
+    color: $body-color
+    font-weight: 300
+
+small
+  color: #999
+
+a
+  color: $link-color
+  text-decoration: none
+
+a:hover, .zeroclipboard-is-hover 
+  border-bottom: 1px solid #ccc
+
+.zeroclipboard-is-hover 
+  cursor: pointer
+
+.zeroclipboard-is-active 
+  color: blue
+
+a:visited
+  color: #5d5dff
+
+#header
+  margin-top: 1em
+  margin-bottom: 1em
+
+#logo
+  font-size: 25px
+  font-weight: 300
+  letter-spacing: -1px
+
+#menu
+  border-top: 5px solid #eeeeee
+  padding-top: 14px
+
+//#logo
+  a:before
+    content: '\00B7'
+    color: red
+    font-size: 32px
+    padding-right: 5px
+    margin-left: -10px
+
+#logo, #menu, .tag-list, .actions
+  a
+    color: $menu-color
+ 
+  a:hover
+    color: $menu-hover-color
+    //border-bottom: 1px solid #222
+
+#tagline
+  color: #ccc
+
+#user-menu, #menu
+  a 
+    margin-right: 5px
+
+body.home
+  #menu
+    .home
+      color: #ccc
+
+//body.languages
+  #menu
+    .languages
+      color: #ccc
+
+//body.tags
+  #menu
+    .tags
+      color: #ccc
+
+#user-menu
+  font-size: 12px
+  text-align: right
+  a
+    color: $body-color
+
+pre, code
+  font-family: $code-font
+  font-weight: 300
+
+strong, em
+  font-weight: 500
+
+.snippet
+  h2.title
+    font-size: 35px
+  h1, h2, h3, h4, h5
+    font-size: 100%
+    font-weight: 500
+  pre, code
+    margin-left: -25px
+    padding-left: 20px
+    border-left: 5px solid #eee
+    margin-bottom: 20px
+    overflow: auto
+  .actions
+    font-size: 12px
+    margin-bottom: 14px
+    a
+      margin-right: 5px
+    a:hover
+      color: $menu-hover-color
+  .days-ago
+    float: right
+    font-size: 10px
+    color: darkred
+
+#snippets-list
+  .snippet
+    margin-bottom: 28px
+    pre, code
+      max-height: 300px
+    .icon-comment
+      display: none
+
+ul.no-style, ol.no-style
+  li
+    display: inline
+    a
+      display: inline-block
+
+.signed-in, .signed-out, .auth-required
+  display: none
+
+//body.signed-in
+  display: inherit
+  .signed-in
+    display: inherit
+
+//body.signed-out
+  display: inherit
+  .signed-out
+    display: inherit
+
+
+input, textarea, input[type="submit"], input[type="reset"], input[type="button"]
+  font-family: $body-font
+
+form.snippet-form
+  input, textarea
+    width: 100%
+  //textarea
+    height: 600px
+
+input.submit
+  font-size: 16px
+  font-weight: 500
+
+select.error, textarea.error, input.error
+  border: 1px solid darkred
+
+.hidden
+  display: none
+
+#footer
+  font-size: 12px
+  li
+    margin-right: 5px
+
+#built-by
+  color: #222
+  font-family: "helvetica neue", helvetica, sans-serif
+  font-weight: 800
+  text-transform: lowercase
+
+#dropdowns
+  margin-top: 14px
+  //ul
+    padding: 1em 0
+  .count
+    display: inline-block
+    min-width: 40px
+    text-align: right
+    margin-right: 10px
+
+#disqus_thread
+  font-family: $body-font
+  color: #222
+
+.right-align
+  text-align: right
+
+ul, li
+  list-style-type: square
+
+#flash
+  display: none
+
+.flash_info
+  color: darkgreen
+
+.flash_error
+  color: darkred
+
+#dropdowns
+  ul, li
+    list-style-type: none

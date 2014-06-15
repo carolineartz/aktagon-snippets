@@ -1,0 +1,11 @@
+- meta :title, 'Confirm delete'
+
+.columns.sixteen
+  p Are you sure you want to delete &ldquo;#{@snippet.title}&rdquo;?
+
+.columns.three
+  form.snippet-form action=@snippet.uri(:delete) method="post"
+    == authenticity_token
+    input type="hidden" name="_method" value="delete"
+    input.submit type="submit" value="Yes, delete"
+    a href='/' No, cancel

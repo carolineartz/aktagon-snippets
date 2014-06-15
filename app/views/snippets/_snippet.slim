@@ -1,0 +1,24 @@
+article.snippet data-user=snippet.user.id data-id=snippet.id itemscope=true itemtype="http://schema.org/Code"
+  - if locals[:show_title]
+    h2.title itemprop="name" == snippet_link(snippet)
+  .actions.clearfix
+    .columns.alpha.ten
+      span.icon-tag
+      - snippet.tags.each do |tag|
+        == tag_link(tag)
+      span.icon-user.username == snippet.user.login
+      -  if snippet.version > 1
+        span.icon-lightbulb Version #{snippet.version}
+    .columns.omega.six.right-align
+      a.auth-required.icon-trash href=snippet.uri(:delete) Delete
+      ' &nbsp;
+      a.auth-required.icon-pencil href=snippet.uri(:edit) Edit
+      ' &nbsp;
+      a.copy-button.icon-copy href=snippet.uri(:raw) 
+        span.icon-database
+        span.text Copy
+      a.icon-key href=snippet.uri(:raw) Raw
+      a.icon-comment#show-disqus href="#" Discuss
+  .content.clearfix == snippet.rendered_body
+  - if snippet.days_ago >= 365
+    p.days-ago Updated #{snippet.days_ago} days ago

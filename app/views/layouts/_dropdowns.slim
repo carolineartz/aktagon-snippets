@@ -1,0 +1,14 @@
+#dropdowns.columns.sixteen
+  ul#language-list.hidden
+    h2 
+      'Languages
+      span.icon-globe
+    - for language in @languages
+      li
+        == language_link language, name: %Q{<span class="count">#{language.snippets.count}</span> #{language.name}}.html_safe
+  ul#tag-list.hidden
+    h2 
+      ' Tags
+      span.icon-tag
+    - for tag in @tags
+      li== tag_link(tag)

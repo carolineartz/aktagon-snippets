@@ -1,0 +1,7 @@
+//= require 'firebugx.js'
+//= require 'vendor/jquery.js'
+//= require 'vendor/jquery.cookie.js'
+//= require 'vendor/ZeroClipboard'
+//= require 'clipboard'
+//= require 'flash'
+//= require 'app'

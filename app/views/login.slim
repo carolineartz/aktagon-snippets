@@ -1,0 +1,10 @@
+- meta :title, "Sign in"
+
+.columns.four
+  form.edit-snippet action="/login" method="post"
+    == authenticity_token
+    input type="text" name="login"
+    input type="password" name="password"
+    input.submit type="submit" value="Sign in"
+    ' &nbsp;
+    a href="/" Cancel

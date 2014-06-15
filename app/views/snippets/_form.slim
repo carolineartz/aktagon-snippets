@@ -1,0 +1,36 @@
+.columns.sixteen
+  form.snippet-form action=(@snippet.persisted? ? @snippet.uri(:edit) : "/snippets/new") method="post"
+    == authenticity_token
+    - if @snippet.persisted?
+      input type="hidden" name="_method" value="put"
+      input type="hidden" name="lock_version" value=@snippet.lock_version
+    label for="snippet-title" Title *
+    input#snippet-title class=error_class(@snippet, :title) type="text" name="snippet[title]" value=@snippet.title
+    label for="snippet-tag-list" Tags
+    input#snippet-tag-list class=error_class(@snippet, :tag_list) type="text" name="snippet[tag_list]" value=@snippet.tag_list.join(', ')
+    label for="snippet-language" Language *
+    select#snippet-language class=error_class(@snippet, :language_id) name="snippet[language_id]"
+      option
+      - @languages.each do |lang|
+        option value=lang.id selected=(@snippet.language.try(:id) == lang.id) = lang.name
+    label for="snippet-body" Body *
+    textarea#snippet-body class=error_class(@snippet, :body) name="snippet[body]" rows=(@snippet.line_count||50)+3 
+      - if @snippet.body.present?
+        = @snippet.body
+      - else
+        ' Example.
+
+          h2. Heading 1
+
+          <code lang="ruby">
+          Code goes here.
+          </code>
+
+          h2. Heading 2
+
+          <code lang="html">
+          Code goes here.
+          </code>
+    input.submit type="submit" value="Save"
+    a href=@snippet.uri Cancel
+

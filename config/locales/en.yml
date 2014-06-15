@@ -1,0 +1,11 @@
+en:
+  login:
+    ok: Signed in successfully.
+    failed: Please check username and/or password.
+    required: You need to sign in.
+  logout:
+    ok: Signed out successfully.
+  snippet:
+    created: Created snippet.
+    deleted: Deleted snippet.
+    updated: Updated snippet.

@@ -1,0 +1,47 @@
+html
+  head
+    == partial :'layouts/_head'
+  body class=meta(:body_classes)
+    .container
+      #header.columns.sixteen
+        #logo.alpha.columns.four 
+          a href="/" title="Home" 
+            ' snippets 
+            //span#tagline #{Snippet.count}
+        #user-menu.omega.columns.twelve 
+          a.signed-out href="/login" 
+            span.icon-user
+            ' Sign in
+          a.signed-in href="/logout" 
+            span.icon-user
+            ' Log out
+            span#username
+          a.signed-in href="/snippets/new" 
+            span.icon-pencil
+            ' New
+      - if @snippets && @snippets.any?
+        #menu.columns.sixteen
+          a.home href="/" title="Home" 
+            span.icon-home
+          a.languages.expand href="#" data-target="#language-list" 
+            ' Languages&nbsp;
+          a.tags.expand href="#" data-target="#tag-list" 
+            ' Tags&nbsp;
+      #content
+        == dropdowns
+        - if has_meta?(:title)
+          .columns.sixteen
+            h1 itemprop="name" = meta(:title)
+
+        .columns.sixteen
+          p#flash
+
+        == yield :content
+      #footer.columns.sixteen
+        ul.no-style
+          li 
+            a#built-by href="http://aktagon.com" title="We help you build better web and mobile apps" Aktagon
+          li <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>
+          li 
+            a href="/about" About this site
+    == partial :'layouts/_analytics'
