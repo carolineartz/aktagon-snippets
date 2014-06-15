@@ -7,7 +7,6 @@ html
         #logo.alpha.columns.four 
           a href="/" title="Home" 
             ' snippets 
-            //span#tagline #{Snippet.count}
         #user-menu.omega.columns.twelve 
           a.signed-out href="/login" 
             span.icon-user
@@ -19,7 +18,7 @@ html
           a.signed-in href="/snippets/new" 
             span.icon-pencil
             ' New
-      - if @snippets && @snippets.any?
+      - if Snippet.count > 0
         #menu.columns.sixteen
           a.home href="/" title="Home" 
             span.icon-home

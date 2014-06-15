@@ -1,6 +1,6 @@
 class Users < ActiveRecord::Migration
-  def change
+  def up
     # Uncoment to create default user
-    # User.create! login: 'user', password: 'password'
+    User.create! login: 'user', password: 'password'
   end
 end

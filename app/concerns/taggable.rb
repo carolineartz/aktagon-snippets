@@ -5,6 +5,10 @@ module Taggable
     has_many :taggings, as: :taggable
     has_many :tags, through: :taggings
 
+    after_destroy do
+      Tag.delete_orphans
+    end
+
     after_save do
       Tag.delete_orphans
     end

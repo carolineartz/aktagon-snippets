@@ -27,7 +27,6 @@ class DbSchema < ActiveRecord::Migration
       t.integer  :tag_id
       t.integer  :taggable_id
       t.string   :taggable_type
-      t.integer  :taggable_count, default: 0
       t.timestamps
     end
 
@@ -36,6 +35,7 @@ class DbSchema < ActiveRecord::Migration
 
     create_table :tags, force: true do |t|
       t.string :name
+      t.integer:snippets_count, default: 0
       t.timestamps
     end
 

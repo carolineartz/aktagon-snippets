@@ -34,7 +34,7 @@ class App < Sinatra::Base
   helpers WillPaginate::Sinatra::Helpers
 
   def current_user
-    User.where('id = ?', session[:user_id]).first if session[:user_id]
+    User.where('id = ?', session[:user_id]).first! if session[:user_id]
   end
 
   def meta(key, value = nil)

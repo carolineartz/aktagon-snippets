@@ -43,15 +43,16 @@ module AppHelpers
     content_tag :a, snippet.title, href: snippet.uri
   end
 
-  def language_link(language, options=nil)
+  def language_link(language, options={})
     name = options.fetch(:name) { language.name }
     href = '/languages/' + language.to_param
     content_tag(:a, name, href: href)
   end
 
-  def tag_link(tag)
+  def tag_link(tag, options={})
+    name = options.fetch(:name) { tag.name }
     href = '/tags/' + tag.to_param
-    content_tag(:a, tag.name, href: href)
+    content_tag(:a, name, href: href)
   end
 
   def content_tag(name, content, attributes = nil)

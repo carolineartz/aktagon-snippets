@@ -5,10 +5,13 @@
       span.icon-globe
     - for language in @languages
       li
-        == language_link language, name: %Q{<span class="count">#{language.snippets.count}</span> #{language.name}}.html_safe
+        == language_link language, name: %Q{<span class="count">#{language.snippets_count}</span> #{language.name}}.html_safe
   ul#tag-list.hidden
     h2 
       ' Tags
       span.icon-tag
     - for tag in @tags
-      li== tag_link(tag)
+      li
+        == tag_link tag
+        //== tag_link tag, name: %Q{<span class="count">#{tag.snippets_count}</span> #{tag.name}}.html_safe
+
