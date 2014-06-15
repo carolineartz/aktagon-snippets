@@ -18,7 +18,14 @@ Clone repo:
     
 Install Ruby gems:
 
+    $ cd aktagon-snippets
     $ bundle
+    
+
+Create .development.env:
+
+    SESSION_SECRET=<Generated with SecureRandom.hex(128)>
+    DISQUS_SHORTNAME=<Your Disqus short name>
 
 Create database:
 
