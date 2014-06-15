@@ -48,7 +48,7 @@ Create .deployment.env:
 
     DEPLOY_DOMAIN=xyz.com
     DEPLOY_SSH_PORT=22
-    DEPLOY_GIT_REPO=/var/git/repositories/snippets.git
+    DEPLOY_GIT_REPO=https://github.com/christianhellsten/aktagon-snippets.git
     DEPLOY_DIRECTORY=/var/www/snippets
     
 Setup directories
