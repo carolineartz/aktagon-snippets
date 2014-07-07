@@ -18,18 +18,18 @@
       - if @snippet.body.present?
         = @snippet.body
       - else
-        ' Example.
+        ' My snippet's description.
 
           h2. Heading 1
 
-          <code lang="ruby">
-          Code goes here.
+          <code>
+          This block uses syntax highlighting for the selected language.
           </code>
 
           h2. Heading 2
 
           <code lang="html">
-          Code goes here.
+          HTML snippet.
           </code>
     input.submit type="submit" value="Save"
     a href=@snippet.uri Cancel
