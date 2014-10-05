@@ -1,5 +1,5 @@
 $code-font: 'Inconsolata', sans-serif
-$header-font: 'Open Sans', sans-serif
+$header-font: 'Roboto', sans-serif
 $body-font: "Open Sans", sans-serif
 
 $link-color: blue
@@ -11,11 +11,22 @@ $menu-visited-color: #222
 
 body
   //font-family: 'Source Sans Pro', sans-serif
+  color: #222
   font-family: $body-font
   font-size: 100%
   font-weight: 300
   color: $body-color
   text-rendering: optimizeLegibility
+  -webkit-font-feature-settings: "kern", "liga", "case"
+  -moz-font-feature-settings: "kern", "liga" , "case"
+  font-feature-settings: "kern", "liga", "case"
+
+
+// Same as h2
+h1
+  font-size: 35px
+  line-height: 40px
+  margin-bottom: 10px
 
 body.text
   margin-left: 20px
@@ -24,11 +35,11 @@ h1, h2, h3, h4, h5
   font-family: $header-font
 
 h1
-  font-weight: 300
+  //font-weight: 300
   letter-spacing: -1px
 
 h2
-  font-weight: 300
+  //font-weight: 800
   letter-spacing: -1px
 
 
@@ -61,11 +72,13 @@ a:visited
   margin-bottom: 1em
 
 #logo
+  font-family: $header-font
   font-size: 25px
   font-weight: 300
   letter-spacing: -1px
 
 #menu
+  font-family: $header-font
   border-top: 5px solid #eeeeee
   padding-top: 14px
 
@@ -192,6 +205,7 @@ select.error, textarea.error, input.error
   display: none
 
 #footer
+  margin-top: 1em
   font-size: 12px
   li
     margin-right: 5px

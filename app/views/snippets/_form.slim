@@ -14,23 +14,25 @@
       - @languages.each do |lang|
         option value=lang.id selected=(@snippet.language.try(:id) == lang.id) = lang.name
     label for="snippet-body" Body *
-    textarea#snippet-body class=error_class(@snippet, :body) name="snippet[body]" rows=(@snippet.line_count||50)+3 
+    textarea#snippet-body class=error_class(@snippet, :body) name="snippet[body]" rows=(@snippet.line_count||30)+3 
       - if @snippet.body.present?
         = @snippet.body
       - else
-        ' Example.
-
-          h2. Heading 1
-
-          <code lang="ruby">
-          Code goes here.
-          </code>
-
-          h2. Heading 2
-
-          <code lang="html">
-          Code goes here.
+        ' <code>
           </code>
     input.submit type="submit" value="Save"
     a href=@snippet.uri Cancel
 
+.columns.sixteen
+    pre
+      ' h2. Example
+
+        &lt;code
+        Code goes here.
+        &lt;/code&gt;
+
+        &lt;code lang="html"&gt;
+        HTML code goes here.
+        &lt;/code&gt;
+
+        "link":http://link.com

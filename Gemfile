@@ -7,7 +7,7 @@ gem 'pry' # Debugging
 gem 'andand'
 gem 'awesome_print', '~> 1.2.0'
 gem "bcrypt-ruby", :require => "bcrypt"
-gem 'will_paginate' # Pagination
+gem 'will_paginate', '~> 3.0' # Pagination
 gem 'slim', '~> 2.0.2' # Better views
 gem 'sass', '~> 3.3.8' # Better CSS
 gem 'coffee-script', '~> 2.2.0' # Better JavaScript

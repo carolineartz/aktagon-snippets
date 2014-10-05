@@ -45,7 +45,7 @@ class SnippetsController < App
     @snippet = current_user.snippets.find(id)
     if @snippet.update_attributes(snippet_params)
       flash :info, 'snippet.updated'
-      redirect @snippet.uri(:edit)
+      redirect @snippet.uri
     else
       edit
     end
