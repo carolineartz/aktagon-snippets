@@ -1,4 +1,8 @@
 #snippets-list.columns.sixteen
+  small 
+    ' #{@snippets.count} #{(@snippets.size > 1 ? 'snippets' : 'snippet')} 
+    - if @snippets.total_pages > 1
+      ' &ndash; displaying #{@snippets.offset + 1}&ndash;#{@snippets.offset + @snippets.size}
   - @snippets.each do |snippet|
     == partial 'snippets/_snippet', locals: { snippet: snippet, show_title: true }
   == paginate @snippets
