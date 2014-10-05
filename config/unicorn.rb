@@ -1,5 +1,3 @@
-rails_env = ENV['RAILS_ENV'] || 'production'
-
 worker_processes 2
 user 'deploy', 'deploy'
 
@@ -9,7 +7,7 @@ timeout 30
 working_directory "/var/www/snippets/current"
 listen "/tmp/snippets.socket", :backlog => 64
 
-pid './tmp/pids/unicorn.pid'
+pid '/tmp/snippets.pid'
 stderr_path "/var/www/snippets/current/log/unicorn.stderr.log"
 stdout_path "/var/www/snippets/current/log/unicorn.stdout.log"
 

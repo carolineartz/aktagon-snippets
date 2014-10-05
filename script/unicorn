@@ -103,13 +103,13 @@ setup () {
   # include rbenv paths
   export PATH=$PATH:/home/deploy/.rbenv/shims:/home/deploy/.rbenv/bin
   # master unicorn pid
-  export PID=$APP_ROOT/tmp/pids/unicorn.pid
+  export PID=/tmp/snippets.pid
   # old master unicorn pid
   export OLD_PID="$PID.oldbin"
 
   if [ "$1" = "kill-worker" ]; then
     # unicorn worker pid
-    WORKER_PID=$APP_ROOT/tmp/pids/unicorn.$2.pid
+    WORKER_PID=/tmp/snippets.$2.pid
   fi
 
   if [ "$1" = "start" ]; then

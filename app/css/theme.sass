@@ -10,7 +10,6 @@ $menu-hover-color: #222
 $menu-visited-color: #222
 
 body
-  //font-family: 'Source Sans Pro', sans-serif
   color: #222
   font-family: $body-font
   font-size: 100%
@@ -158,8 +157,10 @@ strong, em
     color: darkred
 
 #snippets-list
+  small
+    margin-bottom: 1em
+    display: inline-block
   .snippet
-    margin-bottom: 28px
     pre, code
       max-height: 300px
     .icon-comment
