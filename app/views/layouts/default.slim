@@ -3,30 +3,27 @@ html
     == partial :'layouts/_head'
   body class=meta(:body_classes)
     .container
-      #header.columns.sixteen
-        #logo.alpha.columns.four 
-          a href="/" title="Home" 
-            span.name Aktagon
-            'Snippets
-        #user-menu.omega.columns.twelve 
-          a.signed-out href="/login" 
-            span.icon-user
-            ' Sign in
-          a.signed-in href="/logout" 
-            span.icon-user
-            ' Log out
-            span#username
-          a.signed-in href="/snippets/new" 
-            span.icon-pencil
-            ' New
-      - if Snippet.count > 0
-        #menu.columns.sixteen
-          a.home href="/" title="Home" 
-            span.icon-home
-          a.languages.expand href="#" data-target="#language-list" 
-            ' Languages&nbsp;
-          a.tags.expand href="#" data-target="#tag-list" 
-            ' Tags&nbsp;
+      #header
+        - if Snippet.count > 0
+          #menu.columns.eight
+            a.home href="/" title="Home" 
+              span.icon-home
+            a href="http://aktagon.com" title="Aktagon" Aktagon 
+            a.languages.expand href="#" data-target="#language-list" 
+              ' Languages&nbsp;
+            a.tags.expand href="#" data-target="#tag-list" 
+              ' Tags&nbsp;
+          #user-menu.omega.columns.eight
+            a.signed-out href="/login" 
+              span.icon-user
+              ' Sign in
+            a.signed-in href="/logout" 
+              span.icon-user
+              ' Log out
+              span#username
+            a.signed-in href="/snippets/new" 
+              span.icon-pencil
+              ' New
       #content
         == dropdowns
         - if has_meta?(:title)

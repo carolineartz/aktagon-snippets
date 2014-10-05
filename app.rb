@@ -18,6 +18,7 @@ class App < Sinatra::Base
 
   # Rails-style form methods
   use Rack::MethodOverride
+  use ActiveRecord::ConnectionAdapters::ConnectionManagement
 
   configure :development do
     require 'pry'
