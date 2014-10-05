@@ -39,9 +39,12 @@ html
         == yield :content
       #footer.columns.sixteen
         ul.no-style
-          li 
+          li
             a#built-by href="http://aktagon.com" title="We help you build better web and mobile apps" Aktagon
-          li <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>
-          li 
+          li.sep |
+          li
+            a rel="license" href="http://creativecommons.org/licenses/by/3.0/" Creative Commons Attribution 3.0 License
+          li.sep |
+          li
             a href="/about" About this site
     == partial :'layouts/_analytics'
