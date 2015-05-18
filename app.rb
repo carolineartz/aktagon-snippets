@@ -9,7 +9,7 @@ class App < Sinatra::Base
 
   before do
     ActiveRecord::Base.configurations = YAML.load_file('config/database.yml')
-    ActiveRecord::Base.establish_connection(RACK_ENV.to_sym)
+    ActiveRecord::Base.establish_connection(App.environment.to_sym)
   end
 
   # Slim templates
