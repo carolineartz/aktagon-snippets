@@ -1,6 +1,8 @@
 $code-font: 'Inconsolata', sans-serif
-$header-font: 'Roboto', sans-serif
-$body-font: "Lato", sans-serif
+// $header-font: 'Roboto', sans-serif
+// $body-font: "Lato", sans-serif
+$header-font: 'Brandon Grotesque', sans-serif
+$body-font: 'Brandon Grotesque', sans-serif
 
 $link-color: blue
 $body-color: #222
@@ -45,7 +47,7 @@ h2
 h1, h2, h3, h4, h5
   a, a:visited
     color: $body-color
-    font-weight: 300
+    font-weight: 600
 
 small
   color: #999
@@ -156,6 +158,7 @@ strong, em
     font-size: 12px
     margin-bottom: 14px
     a
+      font-size: 14px
       margin-right: 5px
     a:hover
       color: $menu-hover-color
@@ -163,6 +166,10 @@ strong, em
     float: right
     font-size: 10px
     color: darkred
+  .username
+    font-size: 14px
+    &::before
+      font-size: 12px
 
 #snippets-list
   small
