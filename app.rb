@@ -7,6 +7,11 @@ class App < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/public'
   set :views, File.dirname(__FILE__) + '/app/views'
 
+  before do
+    ActiveRecord::Base.configurations = YAML.load_file('config/database.yml')
+    ActiveRecord::Base.establish_connection(RACK_ENV.to_sym)
+  end
+
   # Slim templates
   Slim::Engine.set_default_options use_html_safe: true
   set :slim, layout_engine:  :slim,

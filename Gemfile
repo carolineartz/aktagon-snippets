@@ -37,5 +37,16 @@ group :development do
   gem 'mina'
   gem "better_errors"
   gem "binding_of_caller"
+  gem "jazz_fingers"
 end
+
+group :test do
+  gem 'factory_girl'
+  gem 'faker'
+  gem 'shoulda-matchers'
+  gem 'rack-test'
+  gem 'rspec'
+  gem 'capybara'
+end
+
 
