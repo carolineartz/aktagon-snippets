@@ -10,7 +10,7 @@ describe Language do
 
   let(:language) { FactoryGirl.create :language } 
 
-  it "creates item" do
+  it "creates language" do
     expect(language.name).to eq "html"
   end
 
